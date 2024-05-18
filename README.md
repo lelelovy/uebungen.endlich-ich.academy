@@ -46,7 +46,6 @@ function createTest() {
             <label for="bewertung${index}">Bewertung</label>
             <input type="radio" id="beobachtung${index}" name="choice${index}" value="beobachtung">
             <label for="beobachtung${index}">Beobachtung</label><br>
-            <textarea id="observation${index}" class="hidden" placeholder="Formuliere eine Beobachtung..."></textarea>
             <button type="button" onclick="checkAnswer(${index})">Überprüfen</button>
             <p id="result${index}"></p>
             <p id="example${index}" class="hidden"></p>
@@ -60,7 +59,6 @@ function checkAnswer(index) {
     const chosenOption = document.querySelector(`input[name="choice${index}"]:checked`);
     const result = document.getElementById(`result${index}`);
     const example = document.getElementById(`example${index}`);
-    const observationTextarea = document.getElementById(`observation${index}`);
 
     if (!chosenOption) {
         result.innerText = "Bitte wähle eine Option.";
@@ -76,14 +74,12 @@ function checkAnswer(index) {
         result.className = "incorrect";
     }
 
-    example.innerText = `Eine mögliche Beobachtung wäre: ${sentence.example}`;
-    example.classList.remove("hidden");
-
-    if (chosenOption.value === "bewertung") {
-        observationTextarea.classList.remove("hidden");
+    if (sentence.example) {
+        example.innerText = `Eine mögliche Beobachtung wäre: ${sentence.example}`;
     } else {
-        observationTextarea.classList.add("hidden");
+        example.innerText = "";
     }
+    example.classList.remove("hidden");
 }
 
 function submitTest() {
