@@ -93,7 +93,7 @@ function submitTest() {
         }
     });
 
-    finalResult.innerText = `Sie haben ${score} von ${sentences.length} richtig beantwortet.`;
+    finalResult.innerText = `Du hast ${score} von ${sentences.length} richtig beantwortet.`;
 }
 
 createTest();
