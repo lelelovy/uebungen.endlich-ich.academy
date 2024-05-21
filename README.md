@@ -67,10 +67,10 @@ function checkAnswer(index) {
     }
 
     if (chosenOption.value === sentence.correctAnswer) {
-        result.innerText = "Richtig!";
+        result.innerText = "Sehe ich auch so.";
         result.className = "correct";
     } else {
-        result.innerText = "Falsch!";
+        result.innerText = "Sehe ich anders.";
         result.className = "incorrect";
     }
 
