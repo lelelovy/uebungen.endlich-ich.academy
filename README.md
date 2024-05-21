@@ -93,7 +93,7 @@ function submitTest() {
         }
     });
 
-    finalResult.innerText = `Du hast ${score} von ${sentences.length} richtig beantwortet.`;
+    finalResult.innerText = `Bei ${score} von ${sentences.length} Antworten stimme ich dir zu.`;
 }
 
 createTest();
